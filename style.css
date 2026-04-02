@@ -1,44 +1,34 @@
-/* --- ARQUITECTURA DE TEMAS Y CONTRASTE v5.5 --- */
+/* --- CONFIGURACIÓN DE TEMAS v6.0 --- */
 
-/* G1: Rojo Kanto / Fondo Azul / Pokébola Amarilla */
+/* G1: Rojo / Fondo Azul / Pokébola Amarilla (%23FFDE00) */
 .theme-1 { 
-    --pk: #DC0A2D; --pk-dark: #8b0000; 
-    --bg: #3B4CCA; --screen-bg: #98b088; 
-    --ball: #FFDE00; --title: #fff;
+    --pk: #DC0A2D; --bg: #3B4CCA; --title: #fff;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23FFDE00' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23FFDE00' fill-opacity='0.2'/%3E%3C/svg%3E");
 }
-/* G2: PokéDex Gris Oscuro / Fondo Amarillo Oro / Pokébola Plateada Oscura */
+/* G2: PokéDex Gris Oscuro / Fondo Oro / Pokébola Negra (%23000000) */
 .theme-2 { 
-    --pk: #4A4A4A; --pk-dark: #2C2C2C; 
-    --bg: #D4AF37; --screen-bg: #BDC3C7; 
-    --ball: #222222; /* Ajustado para resaltar sobre el ORO */
-    --title: #fff;
+    --pk: #333333; --bg: #D4AF37; --title: #fff;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23000000' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23000000' fill-opacity='0.2'/%3E%3C/svg%3E");
 }
-/* G3: PokéDex Azul Marino / Fondo Bordó / Pokébola Esmeralda */
+/* G3: PokéDex Azul Marino / Fondo Bordó / Pokébola Verde (%2300A86B) */
 .theme-3 { 
-    --pk: #002366; --pk-dark: #001633; 
-    --bg: #800000; --screen-bg: #d6eaf8; 
-    --ball: #00A86B; --title: #fff;
+    --pk: #002366; --bg: #800000; --title: #fff;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2300A86B' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%2300A86B' fill-opacity='0.2'/%3E%3C/svg%3E");
 }
-/* G4: PokéDex Celeste Diamante / Fondo Negro / Pokébola Platino */
+/* G4: PokéDex Celeste / Fondo NEGRO / Pokébola PLATINO (%23E5E4E2) */
 .theme-4 { 
-    --pk: #B9F2FF; --pk-dark: #7FB3D5; 
-    --bg: #000000; --screen-bg: #D1D1D1; 
-    --ball: #E5E4E2; /* AJUSTADO: Color Platino para resaltar sobre Negro */
-    --title: #222; 
+    --pk: #B9F2FF; --bg: #000000; --title: #222;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23E5E4E2' fill-opacity='0.4' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23E5E4E2' fill-opacity='0.4'/%3E%3C/svg%3E");
 }
-/* G5: Negro / Fondo Blanco / Pokébola Gris Medio */
+/* G5: PokéDex Negra / Fondo BLANCO / Pokébola GRIS OSCURO (%23444444) */
 .theme-5 { 
-    --pk: #111111; --pk-dark: #000000; 
-    --bg: #FFFFFF; --screen-bg: #E0E0E0; 
-    --ball: #888888; /* AJUSTADO: Gris Medio para resaltar sobre Blanco */
-    --title: #fff;
+    --pk: #111111; --bg: #FFFFFF; --title: #fff;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23444444' fill-opacity='0.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23444444' fill-opacity='0.3'/%3E%3C/svg%3E");
 }
-/* Todas: Púrpura Máster / Fondo Beige / Pokébola Púrpura Oscura */
+/* Todas: Púrpura / Fondo Beige / Pokébola Púrpura Oscura (%23301934) */
 .theme-all { 
-    --pk: #A78BFA; --pk-dark: #7C3AED; 
-    --bg: #F5F5DC; --screen-bg: #d2b4de; 
-    --ball: #4A235A; /* AJUSTADO: Púrpura Oscuro para resaltar sobre Beige */
-    --title: #fff;
+    --pk: #A78BFA; --bg: #F5F5DC; --title: #fff;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23301934' fill-opacity='0.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23301934' fill-opacity='0.3'/%3E%3C/svg%3E");
 }
 
 body {
@@ -51,41 +41,31 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: var(--bg);
     position: relative;
-    overflow: hidden; /* Fix para el patrón rotado */
+    overflow-x: hidden;
     transition: background-color 0.4s;
 }
 
-/* --- PATRÓN DIAGONAL DE POKÉBOLAS NÍTIDAS (Forzado v5.5) --- */
+/* PATRÓN DIAGONAL FORZADO v6.0 */
 body::before {
     content: "";
     position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1;
-    /* Dibujamos la Pokébola con un SVG nítido y blanco por defecto */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cpath fill='white' d='M50 0 C22.38 0 0 22.38 0 50 C0 77.62 22.38 100 50 100 C77.62 100 100 77.62 100 50 C100 22.38 77.62 0 50 0 Z M50 90 C27.9 90 10 72.1 10 50 C10 47.7 10.2 45.4 10.5 43.3 L40.5 43.3 C41.6 37.3 45.3 32.4 50 32.4 C54.7 32.4 58.4 37.3 59.5 43.3 L89.5 43.3 C89.8 45.4 90 47.7 90 50 C90 72.1 72.1 90 50 90 Z'/%3E%3Ccircle fill='white' cx='50' cy='50' r='10'/%3E%3C/g%3E%3C/svg%3E");
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background-image: var(--pattern);
     background-repeat: repeat;
-    background-size: 80px 80px;
-    
-    /* Efectos del patrón para cambiar su color dinámicamente */
-    background-blend-mode: color-burn; /* Mezcla fuerte para visibilidad */
-    color: var(--ball); /* Este color reemplaza el blanco del SVG */
-    opacity: 0.15; /* Más visible */
-    
-    transform: rotate(15deg); /* Rotación diagonal */
-    transition: color 0.4s, opacity 0.4s;
+    background-size: 100px 100px;
+    transform: rotate(15deg);
+    z-index: -1;
+    pointer-events: none;
+    transition: background-image 0.4s;
 }
 
 .pokedex-case {
     background-color: var(--pk);
     width: 440px;
     padding: 25px;
-    border: 8px solid #333;
+    border: 8px solid #222;
     border-radius: 15px 15px 15px 70px;
-    box-shadow: 15px 15px 0px rgba(0,0,0,0.4);
-    transition: background-color 0.4s;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.5);
     z-index: 10;
     position: relative;
 }
@@ -95,15 +75,7 @@ body::before {
     text-align: center;
     color: var(--title);
     margin: 15px 0;
-    text-shadow: 2px 2px var(--pk-dark);
-}
-
-/* BOTÓN DE AUDIO ESTÉTICO */
-.audio-control {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
 }
 
 #play-btn {
@@ -112,76 +84,28 @@ body::before {
     border: 4px solid #000;
     padding: 15px 30px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
     cursor: pointer;
-    box-shadow: 4px 4px 0px #111;
-    border-radius: 5px;
 }
 
-#play-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #111;
-}
-
-/* PANTALLA GENERAL */
+/* PANTALLA */
 .pokedex-screen {
     background-color: #dedede;
-    padding: 15px 15px 35px 15px;
+    padding: 15px 15px 30px 15px;
     border-radius: 10px;
-    border: 5px solid #555;
-    margin-bottom: 15px;
+    border: 5px solid #444;
 }
 
 #screen-content, #gritodex-screen {
-    background-color: #98b088; /* Verde GameBoy default */
-    border: 5px inset rgba(0,0,0,0.2);
+    background-color: #98b088;
+    border: 5px inset rgba(0,0,0,0.3);
     min-height: 380px;
-    padding: 12px;
-    overflow: hidden;
+    padding: 10px;
 }
 
-/* OPCIONES JUEGO */
-.options-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+/* --- SECCIÓN GRITODEX (DEX) - FORZADO NEGRO --- */
+#gritodex-screen { color: #000 !important; }
 
-.option-btn {
-    display: flex;
-    align-items: center;
-    background: rgba(255,255,255,0.3);
-    border: 2px solid transparent;
-    padding: 5px;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    width: 100%;
-}
-
-.option-btn:hover { border-color: #333; background: rgba(255,255,255,0.5); }
-
-.pkmn-icon { width: 50px; height: 50px; margin-right: 15px; image-rendering: pixelated; }
-
-/* FEEDBACK JUEGO */
-#feedback { text-align: center; color: white; margin-bottom: 15px; text-shadow: 1px 1px #000; }
-#next-btn { background: #eee; border: 3px solid #333; padding: 10px; font-family: 'Press Start 2P', cursive; cursor: pointer; width: 100%; }
-
-.option-btn.correct { background-color: #2ecc71 !important; color: white; }
-.option-btn.incorrect { background-color: #e74c3c !important; color: white; }
-
-/* --- SECCIÓN GRITODEX (v5.5) --- */
-#gritodex-screen {
-    color: #000000; /* Color base pantalla dex */
-}
-
-.dex-count { 
-    font-size: 12px; 
-    text-align: center; 
-    margin-top: 0; 
-    color: #000000; /* Forzamos Negro */
-}
-.dex-count span { color: #000000; } /* Forzamos Negro en el número */
+.dex-count { text-align: center; color: #000 !important; font-size: 12px; }
 
 #gritodex-list {
     display: grid;
@@ -192,34 +116,57 @@ body::before {
 }
 
 .gritodex-item {
+    background: rgba(255,255,255,0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255,255,255,0.4);
     padding: 5px;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid #000;
 }
 
-.gritodex-item img { width: 80px; height: 80px; image-rendering: pixelated; }
-
-/* FORZAMOS NEGRO PROFUNDO EN NOMBRES Y NÚMEROS (v5.5) */
-.gritodex-item span { 
-    font-size: 7px; 
-    text-align: center; 
-    color: #000000 !important; /* Negro absoluto e inamovible */
-    margin-top: 5px; 
-    width: 100%; 
+/* NÚMEROS Y NOMBRES EN NEGRO PROFUNDO v6.0 */
+.gritodex-item span {
+    color: #000000 !important; /* Negro absoluto */
+    font-size: 8px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
-/* NAV PESTAÑAS */
+/* --- LÓGICA DE COLORES DE JUEGO --- */
+.option-btn {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.3);
+    border: 2px solid transparent;
+    padding: 6px;
+    width: 100%;
+    margin-bottom: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* VERDE CUANDO ES CORRECTO */
+.correct-choice {
+    background-color: #2ecc71 !important;
+    color: white !important;
+    border: 2px solid #fff !important;
+}
+
+/* ROJO CUANDO ES INCORRECTO */
+.wrong-choice {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border: 2px solid #fff !important;
+}
+
+.pkmn-icon { width: 50px; height: 50px; image-rendering: pixelated; }
+
+/* NAV */
 .tabs { display: flex; gap: 5px; margin-bottom: 15px; }
 .tabs button { flex: 1; background: #222; color: #fff; border: 2px solid #fff; padding: 10px; font-family: 'Press Start 2P', cursive; font-size: 8px; cursor: pointer; }
 .tabs button.active { background: #555; color: #f1c40f; }
-
-/* SELECTOR GEN */
-.gen-filter { margin-bottom: 15px; }
-#gen-select { width: 100%; background: #333; color: white; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 10px; border: 4px solid #000; cursor: pointer;}
 
 .hidden { display: none; }
 
@@ -227,13 +174,8 @@ body::before {
 .top-header { display: flex; gap: 15px; margin-bottom: 15px; }
 .big-light { width: 50px; height: 50px; background: #5dade2; border: 4px solid #fff; border-radius: 50%; }
 .loading-light { animation: pulse 0.6s infinite; }
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-.trio-lights { display: flex; gap: 8px; padding-top: 10px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #222; }
-.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
 
-/* DECO GB */
-.bottom-deco { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+.bottom-deco { display: flex; justify-content: space-between; margin-top: 20px; }
 .d-pad { width: 50px; height: 50px; background: #222; clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%); }
-.vent-lines { display: flex; flex-direction: column; gap: 5px; }
-.vent-lines span { width: 40px; height: 4px; background: #222; border-radius: 2px; }
+.vent-lines span { display: block; width: 40px; height: 5px; background: #222; margin-bottom: 4px; }
