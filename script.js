@@ -26,15 +26,11 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
-// --- MOTOR DE TEMAS ---
 function applyTheme(value) {
-    // Limpia clases anteriores de tema
     appBody.className = '';
-    // Aplica la nueva clase: theme-1, theme-2... theme-all
     appBody.classList.add(`theme-${value}`);
 }
 
-// --- PERSISTENCIA ---
 function saveToGritodex(pkmn) {
     let dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
     if (!dex.find(item => item.id === pkmn.id)) {
@@ -55,7 +51,6 @@ function renderGritodex() {
     `).join('');
 }
 
-// --- NAVEGACIÓN ---
 navBtns.game.onclick = () => {
     views.game.classList.remove('hidden');
     views.dex.classList.add('hidden');
@@ -71,7 +66,6 @@ navBtns.dex.onclick = () => {
     renderGritodex();
 };
 
-// --- MOTOR DEL JUEGO ---
 async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
@@ -79,7 +73,7 @@ async function startNewRound() {
     optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
     
     const genValue = genSelect.value;
-    applyTheme(genValue); // Cambia el tema visual al iniciar ronda
+    applyTheme(genValue);
 
     const { min, max } = GEN_RANGES[genValue];
     const ids = [];
