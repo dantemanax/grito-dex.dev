@@ -1,63 +1,79 @@
-/* --- PALETA ACTUALIZADA v4.2 --- */
+/* --- PALETA DE COLORES REFINADA v5.1 --- */
 
-/* G1: Sin cambios */
+/* G1: Rojo / Azul / Amarillo */
 .theme-1 { 
     --pk-red: #DC0A2D; --pk-dark: #8b0000; 
     --bg-color: #3B4CCA; --screen: #98b088; 
     --bg-pattern-color: #FFDE00; 
 }
-/* G2: PokéDex Gris Oscuro */
+/* G2 (Johto) - ACTUALIZADO: PokéDex Gris Oscuro, Fondo Amarillo Oro */
 .theme-2 { 
     --pk-red: #4A4A4A; --pk-dark: #2C2C2C; 
-    --bg-color: #7F8C8D; --screen: #BDC3C7; 
-    --bg-pattern-color: #4FBED2; 
+    --bg-color: #D4AF37; --screen: #BDC3C7; 
+    --bg-pattern-color: #E5E7E9; /* Plateado para el patrón */
 }
-/* G3: PokéDex Azul Marino, Fondo Bordó */
+/* G3 (Hoenn): PokéDex Azul Marino, Fondo Bordó */
 .theme-3 { 
     --pk-red: #002366; --pk-dark: #001633; 
     --bg-color: #800000; --screen: #d6eaf8; 
     --bg-pattern-color: #00A86B; 
 }
-/* G4: PokéDex Celeste Diamante */
+/* G4 (Sinnoh): PokéDex Celeste Diamante, Fondo Negro */
 .theme-4 { 
     --pk-red: #B9F2FF; --pk-dark: #7FB3D5; 
-    --bg-color: #A0A0A0; --screen: #D1D1D1; 
-    --bg-pattern-color: #2C3E50; 
+    --bg-color: #000000; --screen: #D1D1D1; 
+    --bg-pattern-color: #A78BFA; 
 }
-/* G5: Sin cambios (Blanco y Negro) */
+/* G5 (Unova): Negro / Blanco */
 .theme-5 { 
     --pk-red: #111111; --pk-dark: #000000; 
     --bg-color: #FFFFFF; --screen: #E0E0E0; 
     --bg-pattern-color: #777777; 
 }
-/* Todas: PokéDex Púrpura Oscuro, Fondo Beige */
+/* Todas: Púrpura (Ajustado) / Beige */
 .theme-all { 
-    --pk-red: #301934; --pk-dark: #1A0F1D; 
+    --pk-red: #A78BFA; --pk-dark: #7C3AED; 
     --bg-color: #F5F5DC; --screen: #d2b4de; 
-    --bg-pattern-color: #6C3483; 
+    --bg-pattern-color: #F97316; 
 }
 
-/* Configuración de Base */
 :root {
     --screen-text: #2c3e50;
     --btn-gray: #555;
-    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23000' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0L11 4C11 12 17 19 25 21L25 25C17 27 11 34 11 42L11 46C11 54 17 61 25 63L25 67C17 69 11 76 11 84L11 88L15 88L15 84C15 76 21 69 29 67L29 63C21 61 15 54 15 46L15 42C15 34 21 27 29 25L29 21C21 19 15 12 15 4L15 0L11 0ZM25 21C17 19 11 12 11 4L11 0L7 0L7 4C7 12 13 19 21 21L21 25C13 27 7 34 7 42L7 46C13 48 19 55 21 63L21 67C13 69 7 76 7 84L7 88L11 88L11 84C11 76 17 69 25 67L25 63C33 61 39 54 39 46L39 42C39 34 33 27 25 25L25 21ZM39 42L39 46C39 54 33 61 25 63L25 67C33 69 39 76 39 84L39 88L43 88L43 84C43 76 49 69 57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C49 19 43 12 43 4L43 0L39 0L39 4C39 12 45 19 53 21L53 25C45 27 39 34 39 42ZM57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63ZM21 63C13 69 7 76 7 84L7 88L11 88L11 84C11 76 17 69 25 67L25 63C21 61 15 54 15 46L15 42C15 34 21 27 29 25L29 21C21 19 15 12 15 4L15 0L11 0L11 4C11 12 17 19 25 21L25 25C17 27 11 34 11 42L11 46C11 54 17 61 25 63ZM39 84C39 76 45 69 53 21L53 25C45 27 39 34 39 42L39 46C33 48 27 55 25 63L25 67C33 69 39 76 39 84ZM57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63ZM53 21C45 27 39 34 39 42L39 46C39 54 33 61 25 63L25 67C33 69 39 76 39 84L39 88L43 88L43 84C43 76 49 69 57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C49 19 43 12 43 4L43 0L39 0L39 4C39 12 45 19 53 21ZM57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63Z'/%3E%3C/g%3E%3C/svg%3E");
+    /* Patrón de Pokébola Nítida */
+    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='1'%3E%3Cpath opacity='.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' opacity='.3'/%3E%3Cpath opacity='.3' d='M50 55a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0 10a15 15 0 1 0 0-30 15 15 0 0 0 0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 body {
-    background-image: var(--pk-pattern-svg);
     background-color: var(--bg-color);
-    background-blend-mode: luminosity;
-    color: var(--bg-pattern-color);
-    background-repeat: repeat;
-    background-size: 80px 80px;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
     font-family: 'Press Start 2P', cursive;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Patrón Diagonal de Pokébolas */
+body::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: var(--pk-pattern-svg);
+    background-repeat: repeat;
+    background-size: 90px 90px;
+    background-blend-mode: luminosity;
+    color: var(--bg-pattern-color);
+    transform: rotate(-15deg); /* Diagonal */
+    z-index: -1;
+    pointer-events: none;
+    transition: color 0.5s ease;
 }
 
 .pokedex {
@@ -72,7 +88,14 @@ body {
     z-index: 10;
 }
 
-/* El texto de la PokéDex ahora se adapta para ser legible si la PokéDex es clara (como en G4) */
+.top-lights { display: flex; gap: 18px; margin-bottom: 15px; }
+.big-blue-light { width: 60px; height: 60px; background: radial-gradient(circle, #5dade2, #2e86c1); border: 5px solid white; border-radius: 50%; }
+.loading-light { animation: blink 0.5s infinite; }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+.small-lights { display: flex; gap: 7px; padding-top: 8px; }
+.light { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #333; }
+.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
+
 .title { 
     font-size: 18px; 
     color: white; 
@@ -81,7 +104,8 @@ body {
     text-shadow: 2px 2px var(--pk-dark);
 }
 
-/* En el tema de G4 (celeste claro), oscurecemos el título para que se lea */
+/* Ajuste legibilidad para temas claros o invertidos */
+.theme-2 .title { color: #fff; text-shadow: 2px 2px #000; }
 .theme-4 .title { color: #2C3E50; text-shadow: 1px 1px white; }
 
 .nav-menu { display: flex; gap: 10px; margin-bottom: 15px; }
@@ -111,7 +135,7 @@ body {
 
 #play-btn { width: 100%; background: #333; color: #fff; border: none; padding: 14px; font-family: 'Press Start 2P', cursive; font-size: 11px; cursor: pointer; margin-bottom: 15px; box-shadow: 2px 2px 0 white; }
 .options-grid { display: flex; flex-direction: column; gap: 8px; }
-.option-btn { display: flex; align-items: center; background: rgba(255,255,255,0.2); border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; font-size: 12px; padding: 4px; border-radius: 5px; }
+.option-btn { display: flex; align-items: center; background: rgba(255,255,255,0.2); border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; font-size: 12px; padding: 4px; border-radius: 5px; width: 100%;}
 .pkmn-icon { width: 52px; height: 52px; margin-right: 15px; image-rendering: pixelated; }
 .option-btn.correct { background-color: #2ecc71 !important; color: white; border-color: white; }
 .option-btn.incorrect { background-color: #e74c3c !important; color: white; border-color: white; }
@@ -119,7 +143,6 @@ body {
 #feedback { color: white; font-size: 11px; text-align: center; margin-bottom: 20px; min-height: 60px; text-shadow: 1px 1px var(--pk-dark); }
 #next-btn { background: #2ecc71; border: 3px solid #fff; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 13px; cursor: pointer; }
 
-/* Decoración */
 .pokedex-decoration { display: flex; justify-content: space-between; padding: 0 15px; }
 .d-pad { width: 50px; height: 50px; background: #333; clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0% 66%, 0% 33%, 33% 33%); }
 .long-buttons { display: flex; gap: 15px; }
