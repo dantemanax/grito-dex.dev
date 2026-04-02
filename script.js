@@ -102,7 +102,7 @@ async function startNewRound() {
 function renderOptions(pokemons) {
     optionsContainer.innerHTML = pokemons.map(p => `
         <button class="option-btn" data-id="${p.id}" onclick="handleGuess(${p.id}, this)">
-            <img src="${p.sprite}" class="pkmn-icon">
+            <img src="${p.sprite}" style="width:45px; height:45px; margin-right:15px; image-rendering:pixelated">
             <span>${p.name}</span>
         </button>
     `).join('');
