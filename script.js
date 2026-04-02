@@ -24,24 +24,14 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
-// MOTOR DE TEMAS: Forzamos la clase al body
-function updateTheme() {
-    const val = genSelect.value;
-    console.log("Cambiando a tema:", val);
-    appBody.className = ""; // Limpia clases previas
-    appBody.classList.add(`theme-${val}`);
+function applyTheme(value) {
+    appBody.className = `theme-${value}`;
 }
 
 function saveToGritodex(pkmn) {
     let dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
-    // Buscamos si ya existe por ID
     if (!dex.find(item => item.id === pkmn.id)) {
-        // Guardamos los datos necesarios para la visualización en la DEX
-        dex.push({ 
-            id: pkmn.id, 
-            name: pkmn.spanishName || pkmn.name, 
-            sprite: pkmn.sprite 
-        });
+        dex.push({ id: pkmn.id, name: pkmn.spanishName || pkmn.name, sprite: pkmn.sprite });
         dex.sort((a, b) => a.id - b.id);
         localStorage.setItem('gritodex', JSON.stringify(dex));
     }
@@ -58,19 +48,14 @@ function renderGritodex() {
     `).join('');
 }
 
-// NAVEGACIÓN
 navBtns.game.onclick = () => {
-    views.game.classList.remove('hidden');
-    views.dex.classList.add('hidden');
-    navBtns.game.classList.add('active');
-    navBtns.dex.classList.remove('active');
+    views.game.classList.remove('hidden'); views.dex.classList.add('hidden');
+    navBtns.game.classList.add('active'); navBtns.dex.classList.remove('active');
 };
 
 navBtns.dex.onclick = () => {
-    views.game.classList.add('hidden');
-    views.dex.classList.remove('hidden');
-    navBtns.dex.classList.add('active');
-    navBtns.game.classList.remove('active');
+    views.game.classList.add('hidden'); views.dex.classList.remove('hidden');
+    navBtns.dex.classList.add('active'); navBtns.game.classList.remove('active');
     renderGritodex();
 };
 
@@ -78,9 +63,8 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:10px">CONECTANDO...</p>';
-    
-    updateTheme(); // Aplicar colores de la generación elegida
+    optionsContainer.innerHTML = '<p>CARGANDO...</p>';
+    applyTheme(genSelect.value);
 
     const { min, max } = GEN_RANGES[genSelect.value];
     const ids = [];
@@ -117,7 +101,7 @@ async function startNewRound() {
 
 function renderOptions(pokemons) {
     optionsContainer.innerHTML = pokemons.map(p => `
-        <button class="option-btn" onclick="handleGuess(${p.id}, this)">
+        <button class="option-btn" data-id="${p.id}" onclick="handleGuess(${p.id}, this)">
             <img src="${p.sprite}" class="pkmn-icon">
             <span>${p.name}</span>
         </button>
@@ -127,20 +111,26 @@ function renderOptions(pokemons) {
 function handleGuess(id, btn) {
     if (hasGuessed) return;
     hasGuessed = true;
-    document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+    
+    const allButtons = document.querySelectorAll('.option-btn');
+    allButtons.forEach(b => b.disabled = true);
 
     if (id === currentTarget.id) {
-        btn.classList.add('correct');
+        // ACIERTO: Verde
+        btn.classList.add('correct-choice');
         message.innerText = `¡CORRECTO!`;
         document.getElementById('snd-success').play().catch(()=>{});
         saveToGritodex(currentTarget);
     } else {
-        btn.classList.add('incorrect');
+        // ERROR: El elegido en rojo, el correcto en verde
+        btn.classList.add('wrong-choice');
+        allButtons.forEach(b => {
+            if(parseInt(b.dataset.id) === currentTarget.id) {
+                b.classList.add('correct-choice');
+            }
+        });
         message.innerText = `ERA ${currentTarget.spanishName || currentTarget.name}`;
         document.getElementById('snd-error').play().catch(()=>{});
-        document.querySelectorAll('.option-btn').forEach(b => {
-            if(b.innerHTML.includes(currentTarget.sprite)) b.classList.add('correct');
-        });
     }
     feedback.classList.remove('hidden');
 }
