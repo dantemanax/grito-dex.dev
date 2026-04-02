@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grito-Dex | v7.0 Definitive</title>
+    <title>Grito-Dex | v8.0 Master Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="app-body" class="theme-1">
-    <div class="pokedex">
-        <div class="lights-header">
-            <div class="big-blue-light" id="status-light"></div>
-            <div class="trio-dots">
-                <div class="dot r"></div>
-                <div class="dot y"></div>
-                <div class="dot g"></div>
+    <div class="pokedex-container">
+        <div class="header-lights">
+            <div class="main-blue-eye" id="status-light"></div>
+            <div class="status-dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
         </div>
 
         <h1 class="pokedex-title">GRITO-DEX</h1>
         
-        <div class="pokedex-tabs">
+        <div class="view-tabs">
             <button id="btn-game" class="active">JUGAR</button>
             <button id="btn-view-gritodex">DEX</button>
         </div>
 
         <div id="game-view">
-            <div class="gen-selector-area">
-                <select id="gen-select" class="pokedex-select">
-                    <option value="1">GEN 1 (KANTO)</option>
-                    <option value="2">GEN 2 (JOHTO)</option>
-                    <option value="3">GEN 3 (HOENN)</option>
-                    <option value="4">GEN 4 (SINNOH)</option>
-                    <option value="5">GEN 5 (UNOVA)</option>
-                    <option value="all">TODAS (1-5)</option>
-                </select>
-            </div>
+            <div class="ui-top-controls">
+                <div class="select-box">
+                    <select id="gen-select">
+                        <option value="1">GEN 1 (KANTO)</option>
+                        <option value="2">GEN 2 (JOHTO)</option>
+                        <option value="3">GEN 3 (HOENN)</option>
+                        <option value="4">GEN 4 (SINNOH)</option>
+                        <option value="5">GEN 5 (UNOVA)</option>
+                        <option value="all">TODAS (1-5)</option>
+                    </select>
+                </div>
 
-            <div class="screen-frame">
-                <div id="main-screen">
-                    <div id="options-container" class="options-grid"></div>
+                <div class="audio-trigger">
+                    <button id="play-btn">REPRODUCIR GRITO</button>
                 </div>
             </div>
 
-            <div class="center-controls">
-                <button id="play-btn">REPRODUCIR GRITO</button>
+            <div class="pokedex-frame">
+                <div id="main-screen">
+                    <div id="options-container" class="options-stack"></div>
+                </div>
             </div>
 
             <div id="feedback" class="hidden">
@@ -54,19 +56,20 @@
         </div>
 
         <div id="gritodex-view" class="hidden">
-            <div class="screen-frame">
+            <div class="pokedex-frame">
                 <div id="gritodex-screen">
-                    <h3 class="dex-title">VISTOS: <span id="count">0</span></h3>
+                    <h3 class="dex-heading">VISTOS: <span id="count">0</span></h3>
                     <div id="gritodex-list"></div>
                 </div>
             </div>
         </div>
 
-        <div class="pokedex-footer">
-            <div class="d-pad"></div>
-            <div class="start-select">
-                <div class="pill"></div>
-                <div class="pill"></div>
+        <div class="pokedex-bottom">
+            <div class="cross-pad"></div>
+            <div class="deco-vents">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </div>
     </div>
