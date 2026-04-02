@@ -1,25 +1,63 @@
-/* --- CONFIGURACIÓN DE TEMAS --- */
-.theme-1 { --pk-red: #c00d0d; --pk-dark: #8b0000; --bg-color: #2c3e50; --screen: #98b088; }
-.theme-2 { --pk-red: #95a5a6; --pk-dark: #7f8c8d; --bg-color: #d4ac0d; --screen: #85929e; } /* Silver/Gold */
-.theme-3 { --pk-red: #2e86c1; --pk-dark: #21618c; --bg-color: #a93226; --screen: #d6eaf8; } /* Sapphire */
-.theme-4 { --pk-red: #483d8b; --pk-dark: #2f2b5d; --bg-color: #1a1a1a; --screen: #aeb6bf; } /* Diamond */
-.theme-5 { --pk-red: #333333; --pk-dark: #1a1a1a; --bg-color: #ffffff; --screen: #f2f2f2; } /* Black/White */
-.theme-all { --pk-red: #8e44ad; --pk-dark: #6c3483; --bg-color: #f1c40f; --screen: #d2b4de; } /* Master Ball */
+/* --- PALETA ACTUALIZADA v4.2 --- */
 
+/* G1: Sin cambios */
+.theme-1 { 
+    --pk-red: #DC0A2D; --pk-dark: #8b0000; 
+    --bg-color: #3B4CCA; --screen: #98b088; 
+    --bg-pattern-color: #FFDE00; 
+}
+/* G2: PokéDex Gris Oscuro */
+.theme-2 { 
+    --pk-red: #4A4A4A; --pk-dark: #2C2C2C; 
+    --bg-color: #7F8C8D; --screen: #BDC3C7; 
+    --bg-pattern-color: #4FBED2; 
+}
+/* G3: PokéDex Azul Marino, Fondo Bordó */
+.theme-3 { 
+    --pk-red: #002366; --pk-dark: #001633; 
+    --bg-color: #800000; --screen: #d6eaf8; 
+    --bg-pattern-color: #00A86B; 
+}
+/* G4: PokéDex Celeste Diamante */
+.theme-4 { 
+    --pk-red: #B9F2FF; --pk-dark: #7FB3D5; 
+    --bg-color: #A0A0A0; --screen: #D1D1D1; 
+    --bg-pattern-color: #2C3E50; 
+}
+/* G5: Sin cambios (Blanco y Negro) */
+.theme-5 { 
+    --pk-red: #111111; --pk-dark: #000000; 
+    --bg-color: #FFFFFF; --screen: #E0E0E0; 
+    --bg-pattern-color: #777777; 
+}
+/* Todas: PokéDex Púrpura Oscuro, Fondo Beige */
+.theme-all { 
+    --pk-red: #301934; --pk-dark: #1A0F1D; 
+    --bg-color: #F5F5DC; --screen: #d2b4de; 
+    --bg-pattern-color: #6C3483; 
+}
+
+/* Configuración de Base */
 :root {
     --screen-text: #2c3e50;
     --btn-gray: #555;
+    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23000' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0L11 4C11 12 17 19 25 21L25 25C17 27 11 34 11 42L11 46C11 54 17 61 25 63L25 67C17 69 11 76 11 84L11 88L15 88L15 84C15 76 21 69 29 67L29 63C21 61 15 54 15 46L15 42C15 34 21 27 29 25L29 21C21 19 15 12 15 4L15 0L11 0ZM25 21C17 19 11 12 11 4L11 0L7 0L7 4C7 12 13 19 21 21L21 25C13 27 7 34 7 42L7 46C13 48 19 55 21 63L21 67C13 69 7 76 7 84L7 88L11 88L11 84C11 76 17 69 25 67L25 63C33 61 39 54 39 46L39 42C39 34 33 27 25 25L25 21ZM39 42L39 46C39 54 33 61 25 63L25 67C33 69 39 76 39 84L39 88L43 88L43 84C43 76 49 69 57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C49 19 43 12 43 4L43 0L39 0L39 4C39 12 45 19 53 21L53 25C45 27 39 34 39 42ZM57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63ZM21 63C13 69 7 76 7 84L7 88L11 88L11 84C11 76 17 69 25 67L25 63C21 61 15 54 15 46L15 42C15 34 21 27 29 25L29 21C21 19 15 12 15 4L15 0L11 0L11 4C11 12 17 19 25 21L25 25C17 27 11 34 11 42L11 46C11 54 17 61 25 63ZM39 84C39 76 45 69 53 21L53 25C45 27 39 34 39 42L39 46C33 48 27 55 25 63L25 67C33 69 39 76 39 84ZM57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63ZM53 21C45 27 39 34 39 42L39 46C39 54 33 61 25 63L25 67C33 69 39 76 39 84L39 88L43 88L43 84C43 76 49 69 57 67L57 63C49 61 43 54 43 46L43 42C43 34 49 27 57 25L57 21C49 19 43 12 43 4L43 0L39 0L39 4C39 12 45 19 53 21ZM57 25L57 21C65 19 71 12 71 4L71 0L75 0L75 4C75 12 69 19 61 21L61 25C69 27 75 34 75 42L75 46C69 48 63 55 61 63L61 67C69 69 75 76 75 84L75 88L71 88L71 84C71 76 65 69 57 67L57 63Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 body {
+    background-image: var(--pk-pattern-svg);
     background-color: var(--bg-color);
+    background-blend-mode: luminosity;
+    color: var(--bg-pattern-color);
+    background-repeat: repeat;
+    background-size: 80px 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     font-family: 'Press Start 2P', cursive;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .pokedex {
@@ -29,20 +67,23 @@ body {
     border-radius: 10px 10px 10px 60px;
     border: 7px solid #444;
     box-shadow: 12px 12px 0px rgba(0,0,0,0.4);
-    transition: background-color 0.5s ease, border-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    position: relative;
+    z-index: 10;
 }
 
-/* Luces */
-.top-lights { display: flex; gap: 18px; margin-bottom: 15px; }
-.big-blue-light { width: 60px; height: 60px; background: radial-gradient(circle, #5dade2, #2e86c1); border: 5px solid white; border-radius: 50%; }
-.loading-light { animation: blink 0.5s infinite; }
-@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-.small-lights { display: flex; gap: 7px; padding-top: 8px; }
-.light { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #333; }
-.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
-.title { font-size: 18px; color: white; text-align: center; margin: 10px 0; text-shadow: 2px 2px var(--pk-dark); }
+/* El texto de la PokéDex ahora se adapta para ser legible si la PokéDex es clara (como en G4) */
+.title { 
+    font-size: 18px; 
+    color: white; 
+    text-align: center; 
+    margin: 10px 0; 
+    text-shadow: 2px 2px var(--pk-dark);
+}
 
-/* Navegación */
+/* En el tema de G4 (celeste claro), oscurecemos el título para que se lea */
+.theme-4 .title { color: #2C3E50; text-shadow: 1px 1px white; }
+
 .nav-menu { display: flex; gap: 10px; margin-bottom: 15px; }
 .nav-menu button {
     flex: 1; background: #333; color: white; border: 3px solid white;
@@ -50,7 +91,6 @@ body {
 }
 .nav-menu button.active { background: var(--btn-gray); border-color: #f1c40f; }
 
-/* Filtro Gen Customizado */
 .custom-select-container { position: relative; width: 100%; margin-bottom: 15px; }
 #gen-select {
     width: 100%; background-color: var(--btn-gray); color: white;
@@ -60,18 +100,15 @@ body {
 }
 .custom-arrow { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid white; pointer-events: none; }
 
-/* Pantallas */
 .screen-container { background-color: #dedede; padding: 15px 15px 35px 15px; border-radius: 12px; border: 5px solid #555; margin-bottom: 20px; }
 #main-screen, #gritodex-screen { background-color: var(--screen); border: 5px inset rgba(0,0,0,0.2); min-height: 380px; padding: 12px; color: var(--screen-text); transition: background-color 0.5s ease; }
 
-/* Gritodex */
 #gritodex-screen h3 { font-size: 12px; text-align: center; border-bottom: 2px solid var(--screen-text); padding-bottom: 15px; }
 #gritodex-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-height: 320px; overflow-y: auto; padding: 10px 5px; }
 .gritodex-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.25); padding: 10px; border-radius: 8px; border: 2px solid rgba(0,0,0,0.1); }
 .gritodex-item img { width: 100px; height: 100px; image-rendering: pixelated; }
-.gritodex-item span { font-size: 9px; text-align: center; margin-top: 8px; }
+.gritodex-item span { font-size: 9px; text-align: center; margin-top: 8px; line-height: 1.2;}
 
-/* Juego */
 #play-btn { width: 100%; background: #333; color: #fff; border: none; padding: 14px; font-family: 'Press Start 2P', cursive; font-size: 11px; cursor: pointer; margin-bottom: 15px; box-shadow: 2px 2px 0 white; }
 .options-grid { display: flex; flex-direction: column; gap: 8px; }
 .option-btn { display: flex; align-items: center; background: rgba(255,255,255,0.2); border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; font-size: 12px; padding: 4px; border-radius: 5px; }
@@ -88,3 +125,7 @@ body {
 .long-buttons { display: flex; gap: 15px; }
 .long-btn { width: 40px; height: 7px; background: #333; border-radius: 5px; }
 .hidden { display: none; }
+
+#gritodex-list::-webkit-scrollbar { width: 8px; }
+#gritodex-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+#gritodex-list::-webkit-scrollbar-thumb { background: var(--pk-dark); border-radius: 0; }
