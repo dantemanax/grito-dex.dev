@@ -1,0 +1,80 @@
+:root {
+    --pokedex-red: #c00d0d;
+    --screen-bg: #98b088; 
+    --screen-text: #2c3e50;
+}
+
+body {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.pokedex {
+    background-color: var(--pokedex-red);
+    width: 440px; 
+    padding: 25px;
+    border-radius: 10px 10px 10px 60px;
+    border: 7px solid #444;
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.4);
+}
+
+/* Luces y Título */
+.top-lights { display: flex; gap: 18px; margin-bottom: 15px; }
+.big-blue-light { width: 60px; height: 60px; background: radial-gradient(circle, #5dade2, #2e86c1); border: 5px solid white; border-radius: 50%; }
+.loading-light { animation: blink 0.5s infinite; }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+.small-lights { display: flex; gap: 7px; padding-top: 8px; }
+.light { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #333; }
+.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
+.title { font-size: 18px; color: white; text-align: center; margin: 10px 0; }
+
+/* Navegación */
+.nav-menu { display: flex; gap: 10px; margin-bottom: 10px; }
+.nav-menu button {
+    flex: 1; background: #333; color: white; border: 2px solid white;
+    font-family: 'Press Start 2P', cursive; font-size: 10px; padding: 8px; cursor: pointer;
+}
+.nav-menu button.active { background: #555; border-color: #f1c40f; }
+
+/* Pantallas */
+.screen-container {
+    background-color: #dedede; padding: 15px 15px 35px 15px;
+    border-radius: 12px; border: 5px solid #555; margin-bottom: 20px;
+}
+#main-screen, #gritodex-screen {
+    background-color: var(--screen-bg); border: 5px inset #7c8d71;
+    min-height: 360px; padding: 12px; color: var(--screen-text);
+}
+
+/* Gritodex List */
+#gritodex-screen h3 { font-size: 12px; margin-top: 0; text-align: center; border-bottom: 2px solid var(--screen-text); padding-bottom: 10px; }
+#gritodex-list {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    max-height: 300px; overflow-y: auto; padding-right: 5px;
+}
+.gritodex-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.2); padding: 5px; border-radius: 5px; }
+.gritodex-item img { width: 50px; height: 50px; image-rendering: pixelated; }
+.gritodex-item span { font-size: 6px; text-align: center; margin-top: 4px; overflow: hidden; width: 100%; }
+
+/* Botones de Juego */
+#play-btn { width: 100%; background: #333; color: #fff; border: none; padding: 14px; font-family: 'Press Start 2P', cursive; font-size: 11px; cursor: pointer; margin-bottom: 15px; }
+.options-grid { display: flex; flex-direction: column; gap: 8px; }
+.option-btn { display: flex; align-items: center; background: rgba(255,255,255,0.2); border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; font-size: 12px; padding: 4px; border-radius: 5px; width: 100%; }
+.pkmn-icon { width: 52px; height: 52px; margin-right: 15px; image-rendering: pixelated; }
+.option-btn.correct { background-color: #2ecc71 !important; color: white; }
+.option-btn.incorrect { background-color: #e74c3c !important; color: white; }
+
+#feedback { color: white; font-size: 11px; text-align: center; margin-bottom: 20px; min-height: 60px;}
+#next-btn { background: #2ecc71; border: 3px solid #fff; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 13px; cursor: pointer; }
+
+/* Decoración */
+.pokedex-decoration { display: flex; justify-content: space-between; padding: 0 15px; }
+.d-pad { width: 50px; height: 50px; background: #333; clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0% 66%, 0% 33%, 33% 33%); }
+.long-buttons { display: flex; gap: 15px; }
+.long-btn { width: 40px; height: 7px; background: #333; border-radius: 5px; }
+.hidden { display: none; }
