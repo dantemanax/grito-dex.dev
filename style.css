@@ -1,181 +1,185 @@
-/* --- CONFIGURACIÓN DE TEMAS v6.0 --- */
+/* --- CONFIGURACIÓN DE COLORES Y CONTRASTE v6.1 --- */
 
-/* G1: Rojo / Fondo Azul / Pokébola Amarilla (%23FFDE00) */
+/* G1 (Kanto): Rojo Kanto, Fondo Azul Oscuro, Pokébola Amarilla (%23FFDE00) */
 .theme-1 { 
-    --pk: #DC0A2D; --bg: #3B4CCA; --title: #fff;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23FFDE00' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23FFDE00' fill-opacity='0.2'/%3E%3C/svg%3E");
+    --pk: #DC0A2D; --pk-shadow: #8b0000; 
+    --bg: #3B4CCA; --screen: #98b088; 
+    --ball: #FFDE00; --title: #fff;
 }
-/* G2: PokéDex Gris Oscuro / Fondo Oro / Pokébola Negra (%23000000) */
+/* G2 (Johto): PokéDex Gris Oscuro, Fondo Amarillo Oro, Pokébola Negra (%23000000) */
 .theme-2 { 
-    --pk: #333333; --bg: #D4AF37; --title: #fff;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23000000' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23000000' fill-opacity='0.2'/%3E%3C/svg%3E");
+    --pk: #4A4A4A; --pk-shadow: #222222; 
+    --bg: #D4AF37; --screen: #BDC3C7; 
+    --ball: #000000; --title: #fff;
 }
-/* G3: PokéDex Azul Marino / Fondo Bordó / Pokébola Verde (%2300A86B) */
+/* G3 (Hoenn): PokéDex Azul Marino, Fondo Bordó, Pokébola Esmeralda (%2300A86B) */
 .theme-3 { 
-    --pk: #002366; --bg: #800000; --title: #fff;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%2300A86B' fill-opacity='0.2' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%2300A86B' fill-opacity='0.2'/%3E%3C/svg%3E");
+    --pk: #002366; --pk-shadow: #001633; 
+    --bg: #800000; --screen: #d6eaf8; 
+    --ball: #00A86B; --title: #fff;
 }
-/* G4: PokéDex Celeste / Fondo NEGRO / Pokébola PLATINO (%23E5E4E2) */
+/* G4 (Sinnoh): PokéDex Celeste Diamante, Fondo Negro Absoluto, Pokébola Platino (%23E5E4E2) */
 .theme-4 { 
-    --pk: #B9F2FF; --bg: #000000; --title: #222;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23E5E4E2' fill-opacity='0.4' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23E5E4E2' fill-opacity='0.4'/%3E%3C/svg%3E");
+    --pk: #B9F2FF; --pk-shadow: #7FB3D5; 
+    --bg: #000000; --screen: #D1D1D1; 
+    --ball: #E5E4E2; --title: #222; 
 }
-/* G5: PokéDex Negra / Fondo BLANCO / Pokébola GRIS OSCURO (%23444444) */
+/* G5 (Unova): Negro Azabache, Fondo Blanco Puro, Pokébola Gris Carbón (%23333333) */
 .theme-5 { 
-    --pk: #111111; --bg: #FFFFFF; --title: #fff;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23444444' fill-opacity='0.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23444444' fill-opacity='0.3'/%3E%3C/svg%3E");
+    --pk: #111111; --pk-dark: #000000; 
+    --bg: #FFFFFF; --screen: #E0E0E0; 
+    --ball: #333333; --title: #fff;
 }
-/* Todas: Púrpura / Fondo Beige / Pokébola Púrpura Oscura (%23301934) */
+/* Todas: Púrpura Máster, Fondo Beige, Pokébola Púrpura Oscura (%23301934) */
 .theme-all { 
-    --pk: #A78BFA; --bg: #F5F5DC; --title: #fff;
-    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23301934' fill-opacity='0.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23301934' fill-opacity='0.3'/%3E%3C/svg%3E");
+    --pk: #A78BFA; --pk-shadow: #7C3AED; 
+    --bg: #F5F5DC; --screen: #d2b4de; 
+    --ball: #301934; --title: #fff;
+}
+
+:root {
+    --screen-text: #2c3e50;
+    --btn-gray: #555;
+    /* --- NUEVO PATRÓN SVG POKEBOLAS NÍTIDAS (Forzado v6.1) --- */
+    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cpath fill='currentColor' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle fill='currentColor' cx='50' cy='50' r='10' /%3E%3C/g%3E%3C/svg%3E");
 }
 
 body {
+    background-color: var(--bg);
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: 'Press Start 2P', cursive;
-    background-color: var(--bg);
-    position: relative;
-    overflow-x: hidden;
     transition: background-color 0.4s;
+    position: relative;
+    overflow: hidden;
 }
 
-/* PATRÓN DIAGONAL FORZADO v6.0 */
+/* PATRÓN DIAGONAL DE POKÉBOLAS */
 body::before {
     content: "";
     position: fixed;
     top: -50%; left: -50%; width: 200%; height: 200%;
-    background-image: var(--pattern);
+    background-image: var(--pk-pattern-svg);
+    background-size: 80px 80px;
     background-repeat: repeat;
-    background-size: 100px 100px;
-    transform: rotate(15deg);
+    color: var(--ball); /* El color dinámico del patrón */
+    transform: rotate(15deg); /* Rotación diagonal solicitada */
+    opacity: 0.15; /* Visibilidad ajustada */
     z-index: -1;
-    pointer-events: none;
-    transition: background-image 0.4s;
+    transition: color 0.4s;
 }
 
 .pokedex-case {
     background-color: var(--pk);
-    width: 440px;
+    width: 440px; 
     padding: 25px;
+    border-radius: 10px 10px 10px 60px;
     border: 8px solid #222;
-    border-radius: 15px 15px 15px 70px;
     box-shadow: 15px 15px 0px rgba(0,0,0,0.5);
-    z-index: 10;
+    transition: background-color 0.4s;
     position: relative;
+    z-index: 10;
 }
 
-.main-title {
+.pokedex-title {
     font-size: 16px;
-    text-align: center;
     color: var(--title);
+    text-align: center;
+    margin: 10px 0;
+    text-shadow: 2px 2px var(--pk-shadow);
+}
+
+/* Fix legibilidad títulos en temas oscuros (Gen 4) */
+.theme-4 .pokedex-title { color: #2C3E50; text-shadow: 1px 1px white; }
+
+/* --- BOTÓN CENTRAL "REPRODUCIR GRITO" (v6.1) --- */
+.audio-section-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15px 0;
-    text-shadow: 2px 2px rgba(0,0,0,0.5);
+    width: 100%;
 }
 
 #play-btn {
     background-color: #333;
     color: #eee;
     border: 4px solid #000;
-    padding: 15px 30px;
+    padding: 15px 25px;
     font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #111;
+    border-radius: 5px;
+    width: 80%; /* Prominente y central */
+}
+
+#play-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #111;
+}
+
+/* --- SELECTOR GEN ESTÉTICO (v6.1) --- */
+.gen-nav-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.gen-btn {
+    background: var(--btn-gray);
+    color: white;
+    border: 2px solid #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    padding: 5px;
     cursor: pointer;
 }
 
-/* PANTALLA */
-.pokedex-screen {
-    background-color: #dedede;
-    padding: 15px 15px 30px 15px;
-    border-radius: 10px;
-    border: 5px solid #444;
+.gen-text {
+    font-size: 8px;
+    color: white;
+    margin: 0 15px;
 }
 
-#screen-content, #gritodex-screen {
-    background-color: #98b088;
+/* PANTALLA */
+.pokedex-screen-frame {
+    background-color: #dedede;
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #555;
+    margin-bottom: 5px;
+}
+
+#options-container, #gritodex-screen {
+    background-color: var(--screen-bg);
     border: 5px inset rgba(0,0,0,0.3);
-    min-height: 380px;
+    min-height: 360px;
     padding: 10px;
 }
 
-/* --- SECCIÓN GRITODEX (DEX) - FORZADO NEGRO --- */
-#gritodex-screen { color: #000 !important; }
+/* OPCIONES JUEGO */
+.options-grid-view { display: flex; flex-direction: column; gap: 5px; }
 
-.dex-count { text-align: center; color: #000 !important; font-size: 12px; }
-
-#gritodex-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-height: 340px;
-    overflow-y: auto;
-}
-
-.gritodex-item {
-    background: rgba(255,255,255,0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    border: 1px solid #000;
-}
-
-/* NÚMEROS Y NOMBRES EN NEGRO PROFUNDO v6.0 */
-.gritodex-item span {
-    color: #000000 !important; /* Negro absoluto */
-    font-size: 8px;
-    text-align: center;
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-/* --- LÓGICA DE COLORES DE JUEGO --- */
 .option-btn {
     display: flex;
     align-items: center;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.2);
     border: 2px solid transparent;
-    padding: 6px;
+    padding: 4px;
     width: 100%;
-    margin-bottom: 5px;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     cursor: pointer;
 }
 
-/* VERDE CUANDO ES CORRECTO */
-.correct-choice {
-    background-color: #2ecc71 !important;
-    color: white !important;
-    border: 2px solid #fff !important;
-}
+.pkmn-icon { width: 45px; height: 45px; image-rendering: pixelated; margin-right: 15px;}
 
-/* ROJO CUANDO ES INCORRECTO */
-.wrong-choice {
-    background-color: #e74c3c !important;
-    color: white !important;
-    border: 2px solid #fff !important;
-}
-
-.pkmn-icon { width: 50px; height: 50px; image-rendering: pixelated; }
-
-/* NAV */
-.tabs { display: flex; gap: 5px; margin-bottom: 15px; }
-.tabs button { flex: 1; background: #222; color: #fff; border: 2px solid #fff; padding: 10px; font-family: 'Press Start 2P', cursive; font-size: 8px; cursor: pointer; }
-.tabs button.active { background: #555; color: #f1c40f; }
-
-.hidden { display: none; }
-
-/* LUCES */
-.top-header { display: flex; gap: 15px; margin-bottom: 15px; }
-.big-light { width: 50px; height: 50px; background: #5dade2; border: 4px solid #fff; border-radius: 50%; }
-.loading-light { animation: pulse 0.6s infinite; }
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
-
-.bottom-deco { display: flex; justify-content: space-between; margin-top: 20px; }
-.d-pad { width: 50px; height: 50px; background: #222; clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%); }
-.vent-lines span { display: block; width: 40px; height: 5px; background: #222; margin-bottom: 4px; }
+/* Lógica
