@@ -1,154 +1,139 @@
-/* --- PALETA DE COLORES REFINADA v5.1 --- */
+/* --- VARIABLES DE TEMA (CORRECCIÓN FINAL v5.2) --- */
 
-/* G1: Rojo / Azul / Amarillo */
+/* G1: Rojo Kanto / Fondo Azul / Pokébola Amarilla */
 .theme-1 { 
-    --pk-red: #DC0A2D; --pk-dark: #8b0000; 
-    --bg-color: #3B4CCA; --screen: #98b088; 
-    --bg-pattern-color: #FFDE00; 
+    --pk-color: #DC0A2D; --pk-shadow: #8b0000; 
+    --bg-main: #3B4CCA; --screen-bg: #98b088; 
+    --ball-color: #FFDE00; --title-color: white;
 }
-/* G2 (Johto) - ACTUALIZADO: PokéDex Gris Oscuro, Fondo Amarillo Oro */
+/* G2: PokéDex Gris Oscuro / Fondo Amarillo Oro / Pokébola Plata */
 .theme-2 { 
-    --pk-red: #4A4A4A; --pk-dark: #2C2C2C; 
-    --bg-color: #D4AF37; --screen: #BDC3C7; 
-    --bg-pattern-color: #E5E7E9; /* Plateado para el patrón */
+    --pk-color: #333333; --pk-shadow: #000000; 
+    --bg-main: #FFD700; --screen-bg: #BDC3C7; 
+    --ball-color: #C0C0C0; --title-color: white;
 }
-/* G3 (Hoenn): PokéDex Azul Marino, Fondo Bordó */
+/* G3: PokéDex Azul Marino / Fondo Bordó / Pokébola Verde */
 .theme-3 { 
-    --pk-red: #002366; --pk-dark: #001633; 
-    --bg-color: #800000; --screen: #d6eaf8; 
-    --bg-pattern-color: #00A86B; 
+    --pk-color: #000080; --pk-shadow: #000033; 
+    --bg-main: #800000; --screen-bg: #d6eaf8; 
+    --ball-color: #2ecc71; --title-color: white;
 }
-/* G4 (Sinnoh): PokéDex Celeste Diamante, Fondo Negro */
+/* G4: PokéDex Celeste Diamante / Fondo Negro / Pokébola Púrpura */
 .theme-4 { 
-    --pk-red: #B9F2FF; --pk-dark: #7FB3D5; 
-    --bg-color: #000000; --screen: #D1D1D1; 
-    --bg-pattern-color: #A78BFA; 
+    --pk-color: #B9F2FF; --pk-shadow: #7FB3D5; 
+    --bg-main: #000000; --screen-bg: #D1D1D1; 
+    --ball-color: #A78BFA; --title-color: #333; /* Título oscuro para contraste */
 }
-/* G5 (Unova): Negro / Blanco */
+/* G5: Negro / Blanco / Gris */
 .theme-5 { 
-    --pk-red: #111111; --pk-dark: #000000; 
-    --bg-color: #FFFFFF; --screen: #E0E0E0; 
-    --bg-pattern-color: #777777; 
+    --pk-color: #111111; --pk-shadow: #000000; 
+    --bg-main: #FFFFFF; --screen-bg: #E0E0E0; 
+    --ball-color: #777777; --title-color: white;
 }
-/* Todas: Púrpura (Ajustado) / Beige */
+/* Todas: Púrpura Medio / Fondo Beige / Pokébola Naranja */
 .theme-all { 
-    --pk-red: #A78BFA; --pk-dark: #7C3AED; 
-    --bg-color: #F5F5DC; --screen: #d2b4de; 
-    --bg-pattern-color: #F97316; 
-}
-
-:root {
-    --screen-text: #2c3e50;
-    --btn-gray: #555;
-    /* Patrón de Pokébola Nítida */
-    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='1'%3E%3Cpath opacity='.3' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' opacity='.3'/%3E%3Cpath opacity='.3' d='M50 55a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0 10a15 15 0 1 0 0-30 15 15 0 0 0 0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --pk-color: #9B59B6; --pk-shadow: #6c3483; 
+    --bg-main: #F5F5DC; --screen-bg: #d2b4de; 
+    --ball-color: #F39C12; --title-color: white;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-main);
     margin: 0;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: 'Press Start 2P', cursive;
-    transition: background-color 0.5s ease;
-    position: relative;
-    overflow-x: hidden;
+    transition: background-color 0.4s ease;
 }
 
-/* Patrón Diagonal de Pokébolas */
-body::after {
+/* --- PATRÓN DIAGONAL DE POKÉBOLAS (v5.2) --- */
+body::before {
     content: "";
     position: fixed;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background-image: var(--pk-pattern-svg);
-    background-repeat: repeat;
-    background-size: 90px 90px;
-    background-blend-mode: luminosity;
-    color: var(--bg-pattern-color);
-    transform: rotate(-15deg); /* Diagonal */
     z-index: -1;
-    pointer-events: none;
-    transition: color 0.5s ease;
+    /* Dibujamos la Pokébola con un SVG nítido */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath fill='white' d='M50 0 C22.38 0 0 22.38 0 50 C0 77.62 22.38 100 50 100 C77.62 100 100 77.62 100 50 C100 22.38 77.62 0 50 0 Z M50 90 C27.9 90 10 72.1 10 50 C10 47.7 10.2 45.4 10.5 43.3 L40.5 43.3 C41.6 37.3 45.3 32.4 50 32.4 C54.7 32.4 58.4 37.3 59.5 43.3 L89.5 43.3 C89.8 45.4 90 47.7 90 50 C90 72.1 72.1 90 50 90 Z'/%3E%3Ccircle fill='white' cx='50' cy='50' r='10'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 80px 80px;
+    opacity: 0.15; /* Más visible */
+    transform: rotate(15deg); /* Diagonal */
+    /* Este filtro hace que el patrón blanco tome el color de la variable */
+    filter: sepia(100%) saturate(1000%) brightness(100%);
+    transition: color 0.4s ease;
 }
 
+/* Aplicamos el color de la variable al patrón mediante JS o filter */
+#app-body { color: var(--ball-color); }
+
 .pokedex {
-    background-color: var(--pk-red);
+    background-color: var(--pk-color);
     width: 440px; 
     padding: 25px;
     border-radius: 10px 10px 10px 60px;
-    border: 7px solid #444;
-    box-shadow: 12px 12px 0px rgba(0,0,0,0.4);
-    transition: background-color 0.5s ease;
-    position: relative;
+    border: 7px solid #333;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.3);
+    transition: background-color 0.4s ease;
     z-index: 10;
 }
 
-.top-lights { display: flex; gap: 18px; margin-bottom: 15px; }
-.big-blue-light { width: 60px; height: 60px; background: radial-gradient(circle, #5dade2, #2e86c1); border: 5px solid white; border-radius: 50%; }
-.loading-light { animation: blink 0.5s infinite; }
-@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-.small-lights { display: flex; gap: 7px; padding-top: 8px; }
-.light { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #333; }
-.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
-
 .title { 
     font-size: 18px; 
-    color: white; 
+    color: var(--title-color); 
     text-align: center; 
-    margin: 10px 0; 
-    text-shadow: 2px 2px var(--pk-dark);
+    margin: 15px 0; 
+    text-shadow: 2px 2px var(--pk-shadow);
 }
-
-/* Ajuste legibilidad para temas claros o invertidos */
-.theme-2 .title { color: #fff; text-shadow: 2px 2px #000; }
-.theme-4 .title { color: #2C3E50; text-shadow: 1px 1px white; }
 
 .nav-menu { display: flex; gap: 10px; margin-bottom: 15px; }
 .nav-menu button {
     flex: 1; background: #333; color: white; border: 3px solid white;
-    font-family: 'Press Start 2P', cursive; font-size: 10px; padding: 10px; cursor: pointer;
+    font-family: 'Press Start 2P', cursive; font-size: 10px; padding: 12px; cursor: pointer;
 }
-.nav-menu button.active { background: var(--btn-gray); border-color: #f1c40f; }
-
-.custom-select-container { position: relative; width: 100%; margin-bottom: 15px; }
-#gen-select {
-    width: 100%; background-color: var(--btn-gray); color: white;
-    font-family: 'Press Start 2P', cursive; font-size: 13px; padding: 12px;
-    appearance: none; border: 4px solid #333; cursor: pointer;
-    box-shadow: 3px 3px 0px white;
-}
-.custom-arrow { position: absolute; top: 50%; right: 15px; transform: translateY(-50%); border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid white; pointer-events: none; }
+.nav-menu button.active { background: #555; border-color: #f1c40f; }
 
 .screen-container { background-color: #dedede; padding: 15px 15px 35px 15px; border-radius: 12px; border: 5px solid #555; margin-bottom: 20px; }
-#main-screen, #gritodex-screen { background-color: var(--screen); border: 5px inset rgba(0,0,0,0.2); min-height: 380px; padding: 12px; color: var(--screen-text); transition: background-color 0.5s ease; }
+#main-screen, #gritodex-screen { background-color: var(--screen-bg); border: 5px inset rgba(0,0,0,0.2); min-height: 380px; padding: 12px; color: #2c3e50; }
 
-#gritodex-screen h3 { font-size: 12px; text-align: center; border-bottom: 2px solid var(--screen-text); padding-bottom: 15px; }
-#gritodex-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-height: 320px; overflow-y: auto; padding: 10px 5px; }
-.gritodex-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.25); padding: 10px; border-radius: 8px; border: 2px solid rgba(0,0,0,0.1); }
-.gritodex-item img { width: 100px; height: 100px; image-rendering: pixelated; }
-.gritodex-item span { font-size: 9px; text-align: center; margin-top: 8px; line-height: 1.2;}
-
-#play-btn { width: 100%; background: #333; color: #fff; border: none; padding: 14px; font-family: 'Press Start 2P', cursive; font-size: 11px; cursor: pointer; margin-bottom: 15px; box-shadow: 2px 2px 0 white; }
 .options-grid { display: flex; flex-direction: column; gap: 8px; }
-.option-btn { display: flex; align-items: center; background: rgba(255,255,255,0.2); border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; font-size: 12px; padding: 4px; border-radius: 5px; width: 100%;}
+.option-btn { 
+    display: flex; align-items: center; background: rgba(255,255,255,0.3); 
+    border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; 
+    font-size: 12px; padding: 6px; border-radius: 8px; width: 100%;
+}
 .pkmn-icon { width: 52px; height: 52px; margin-right: 15px; image-rendering: pixelated; }
-.option-btn.correct { background-color: #2ecc71 !important; color: white; border-color: white; }
-.option-btn.incorrect { background-color: #e74c3c !important; color: white; border-color: white; }
 
-#feedback { color: white; font-size: 11px; text-align: center; margin-bottom: 20px; min-height: 60px; text-shadow: 1px 1px var(--pk-dark); }
-#next-btn { background: #2ecc71; border: 3px solid #fff; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 13px; cursor: pointer; }
+.option-btn.correct { background-color: #2ecc71 !important; color: white; }
+.option-btn.incorrect { background-color: #e74c3c !important; color: white; }
 
-.pokedex-decoration { display: flex; justify-content: space-between; padding: 0 15px; }
-.d-pad { width: 50px; height: 50px; background: #333; clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0% 66%, 0% 33%, 33% 33%); }
-.long-buttons { display: flex; gap: 15px; }
-.long-btn { width: 40px; height: 7px; background: #333; border-radius: 5px; }
+#feedback { color: white; font-size: 11px; text-align: center; margin-top: 15px; min-height: 50px; text-shadow: 1px 1px #000;}
+#next-btn { background: #2ecc71; border: 3px solid #fff; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 13px; cursor: pointer; width: 100%; margin-top: 10px; }
+
+/* Selector de Gen */
+.custom-select-container { position: relative; margin-bottom: 15px; }
+#gen-select {
+    width: 100%; background: #333; color: white; padding: 12px; 
+    font-family: 'Press Start 2P', cursive; font-size: 12px; border: 4px solid #000;
+}
+
+/* Gritodex */
+#gritodex-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-height: 320px; overflow-y: auto; }
+.gritodex-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.4); padding: 10px; border-radius: 8px; }
+.gritodex-item img { width: 100px; height: 100px; image-rendering: pixelated; }
+.gritodex-item span { font-size: 9px; text-align: center; margin-top: 5px; }
+
 .hidden { display: none; }
 
-#gritodex-list::-webkit-scrollbar { width: 8px; }
-#gritodex-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-#gritodex-list::-webkit-scrollbar-thumb { background: var(--pk-dark); border-radius: 0; }
+/* Luces */
+.top-lights { display: flex; gap: 15px; margin-bottom: 15px; }
+.big-blue-light { width: 50px; height: 50px; background: #5dade2; border: 4px solid white; border-radius: 50%; }
+.loading-light { animation: blink 0.5s infinite; }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+.light { width: 15px; height: 15px; border-radius: 50%; border: 2px solid #333; }
+.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
