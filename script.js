@@ -7,7 +7,6 @@ const GEN_RANGES = {
     "all": { min: 1, max: 649 }
 };
 
-// Elementos
 const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
 const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
 const optionsContainer = document.getElementById('options-container');
@@ -26,13 +25,15 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
-// --- LÓGICA DE PERSISTENCIA ---
+// --- PERSISTENCIA ---
 function saveToGritodex(pkmn) {
     let dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
-    // Solo guardar si no existe ya
     if (!dex.find(item => item.id === pkmn.id)) {
-        dex.push({ id: pkmn.id, name: pkmn.spanishName || pkmn.name, sprite: pkmn.sprite });
-        // Ordenar por ID
+        dex.push({ 
+            id: pkmn.id, 
+            name: pkmn.spanishName || pkmn.name, 
+            sprite: pkmn.sprite 
+        });
         dex.sort((a, b) => a.id - b.id);
         localStorage.setItem('gritodex', JSON.stringify(dex));
     }
@@ -44,12 +45,12 @@ function renderGritodex() {
     gritodexList.innerHTML = dex.map(p => `
         <div class="gritodex-item">
             <img src="${p.sprite}" alt="${p.name}">
-            <span>#${p.id} ${p.name}</span>
+            <span>#${p.id}<br>${p.name}</span>
         </div>
     `).join('');
 }
 
-// --- LÓGICA DE NAVEGACIÓN ---
+// --- NAVEGACIÓN ---
 navBtns.game.onclick = () => {
     views.game.classList.remove('hidden');
     views.dex.classList.add('hidden');
@@ -65,23 +66,12 @@ navBtns.dex.onclick = () => {
     renderGritodex();
 };
 
-// --- LÓGICA DEL JUEGO ---
-async function getPokemonInfo(id) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const data = await res.json();
-    return {
-        id: data.id,
-        name: data.name.toUpperCase(),
-        cry: data.cries.latest || data.cries.legacy,
-        sprite: data.sprites.front_default
-    };
-}
-
+// --- MOTOR DEL JUEGO ---
 async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:10px">BUSCANDO...</p>';
     
     const { min, max } = GEN_RANGES[genSelect.value];
     const ids = [];
@@ -91,10 +81,18 @@ async function startNewRound() {
     }
 
     try {
-        const pokemons = await Promise.all(ids.map(id => getPokemonInfo(id)));
+        const pokemons = await Promise.all(ids.map(async id => {
+            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const data = await res.json();
+            return {
+                id: data.id,
+                name: data.name.toUpperCase(),
+                cry: data.cries.latest || data.cries.legacy,
+                sprite: data.sprites.front_default
+            };
+        }));
+
         currentTarget = pokemons[Math.floor(Math.random() * 5)];
-        
-        // Cargar nombre español del ganador
         const sRes = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${currentTarget.id}`);
         const sData = await sRes.json();
         currentTarget.spanishName = sData.names.find(n => n.language.name === "es")?.name.toUpperCase();
@@ -126,13 +124,12 @@ function handleGuess(id, btn) {
         btn.classList.add('correct');
         message.innerText = `¡LOGRADO! ES ${currentTarget.spanishName || currentTarget.name}`;
         sndSuccess.play().catch(()=>{});
-        saveToGritodex(currentTarget); // <--- GUARDAR EN LA GRITODEX
+        saveToGritodex(currentTarget);
     } else {
         btn.classList.add('incorrect');
         message.innerText = `ERA ${currentTarget.spanishName || currentTarget.name}`;
         sndError.play().catch(()=>{});
         document.querySelectorAll('.option-btn').forEach(b => {
-            // Un truco simple para marcar el correcto visualmente
             if(b.innerHTML.includes(currentTarget.sprite)) b.classList.add('correct');
         });
     }
