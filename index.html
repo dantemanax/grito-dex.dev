@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grito-Dex | v5.3 Final Polish</title>
+    <title>Grito-Dex | v5.4 Professional</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="app-body" class="theme-1">
-    <div class="pokedex">
-        <div class="top-lights">
-            <div class="big-blue-light" id="status-light"></div>
-            <div class="small-lights">
-                <div class="light red"></div>
-                <div class="light yellow"></div>
-                <div class="light green"></div>
+    <div class="pokedex-case">
+        <div class="top-header">
+            <div class="big-light" id="status-light"></div>
+            <div class="trio-lights">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
             </div>
         </div>
 
-        <h1 class="title">GRITO-DEX</h1>
+        <h1 class="main-title">GRITO-DEX</h1>
         
-        <div class="nav-menu">
+        <div class="tabs">
             <button id="btn-game" class="active">JUGAR</button>
-            <button id="btn-view-gritodex">GRITODEX</button>
+            <button id="btn-view-gritodex">DEX</button>
         </div>
 
         <div id="game-view">
-            <div class="filter-section">
-                <div class="custom-select-container">
+            <div class="gen-filter">
+                <div class="select-wrapper">
                     <select id="gen-select">
                         <option value="1">GEN 1 (KANTO)</option>
                         <option value="2">GEN 2 (JOHTO)</option>
@@ -36,17 +36,15 @@
                         <option value="5">GEN 5 (UNOVA)</option>
                         <option value="all">TODAS (1-5)</option>
                     </select>
-                    <span class="custom-arrow"></span>
                 </div>
             </div>
 
-            <div class="screen-container">
-                <div id="main-screen">
-                    <div id="audio-section">
-                        <button id="play-btn">A</button>
-                        <span class="btn-label">PLAY</span>
+            <div class="pokedex-screen">
+                <div id="screen-content">
+                    <div class="audio-control">
+                        <button id="play-btn">SOUND</button>
                     </div>
-                    <div id="options-container" class="options-grid"></div>
+                    <div id="options-container" class="options-list"></div>
                 </div>
             </div>
 
@@ -57,19 +55,18 @@
         </div>
 
         <div id="gritodex-view" class="hidden">
-            <div class="screen-container">
+            <div class="pokedex-screen">
                 <div id="gritodex-screen">
-                    <h3>AVISTADOS: <span id="count">0</span></h3>
+                    <h3 class="dex-count">VISTOS: <span id="count">0</span></h3>
                     <div id="gritodex-list"></div>
                 </div>
             </div>
         </div>
 
-        <div class="pokedex-decoration">
+        <div class="bottom-deco">
             <div class="d-pad"></div>
-            <div class="gameboy-controls">
-                <div class="pill-btn"></div>
-                <div class="pill-btn"></div>
+            <div class="vent-lines">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </div>
