@@ -8,25 +8,24 @@ const GEN_RANGES = {
 };
 
 const appBody = document.getElementById('app-body');
-const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
-const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
+const genSelect = document.getElementById('gen-select');
 const optionsContainer = document.getElementById('options-container');
 const playBtn = document.getElementById('play-btn');
 const feedback = document.getElementById('feedback');
 const message = document.getElementById('message');
 const nextBtn = document.getElementById('next-btn');
-const genSelect = document.getElementById('gen-select');
 const statusLight = document.getElementById('status-light');
 const gritodexList = document.getElementById('gritodex-list');
 const countLabel = document.getElementById('count');
-const sndSuccess = document.getElementById('snd-success');
-const sndError = document.getElementById('snd-error');
+const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
+const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
 
 let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
 function applyTheme(value) {
+    console.log("Aplicando tema de Generación:", value);
     appBody.className = '';
     appBody.classList.add(`theme-${value}`);
 }
@@ -42,7 +41,7 @@ function saveToGritodex(pkmn) {
 
 function renderGritodex() {
     const dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
-    countLabel.innerText = dex.length;
+    if(countLabel) countLabel.innerText = dex.length;
     gritodexList.innerHTML = dex.map(p => `
         <div class="gritodex-item">
             <img src="${p.sprite}" alt="${p.name}">
@@ -70,7 +69,7 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
+    optionsContainer.innerHTML = '<p>BUSCANDO...</p>';
     
     const genValue = genSelect.value;
     applyTheme(genValue);
@@ -103,6 +102,7 @@ async function startNewRound() {
         renderOptions(pokemons);
         statusLight.classList.remove('loading-light');
     } catch (e) {
+        console.error("Error de carga:", e);
         optionsContainer.innerHTML = 'ERROR DE RED';
         statusLight.classList.remove('loading-light');
     }
@@ -124,13 +124,13 @@ function handleGuess(id, btn) {
 
     if (id === currentTarget.id) {
         btn.classList.add('correct');
-        message.innerText = `¡LOGRADO! ES ${currentTarget.spanishName || currentTarget.name}`;
-        sndSuccess.play().catch(()=>{});
+        message.innerText = `¡SI! ES ${currentTarget.spanishName || currentTarget.name}`;
+        document.getElementById('snd-success').play().catch(()=>{});
         saveToGritodex(currentTarget);
     } else {
         btn.classList.add('incorrect');
         message.innerText = `ERA ${currentTarget.spanishName || currentTarget.name}`;
-        sndError.play().catch(()=>{});
+        document.getElementById('snd-error').play().catch(()=>{});
         document.querySelectorAll('.option-btn').forEach(b => {
             if(b.innerHTML.includes(currentTarget.sprite)) b.classList.add('correct');
         });
