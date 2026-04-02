@@ -1,87 +1,62 @@
-/* --- VARIABLES DE TEMA v5.3 --- */
-
+/* --- CONFIGURACIÓN DE COLORES v5.4 --- */
 .theme-1 { 
-    --pk-color: #DC0A2D; --bg-main: #3B4CCA; 
-    --ball-color: #FFDE00; --title-color: white;
+    --pk: #DC0A2D; --bg: #3B4CCA; --ball: #FFDE00; --title: #fff;
 }
-/* Gen 2: Ajustado patrón a un GRIS MUY OSCURO para resaltar sobre el ORO */
 .theme-2 { 
-    --pk-color: #333333; --bg-main: #D4AF37; 
-    --ball-color: #1A1A1A; --title-color: white;
+    --pk: #4A4A4A; --bg: #D4AF37; --ball: #2C2C2C; --title: #fff; /* Pokedex Gris, Fondo Oro */
 }
 .theme-3 { 
-    --pk-color: #002366; --bg-main: #800000; 
-    --ball-color: #2ecc71; --title-color: white;
+    --pk: #002366; --bg: #800000; --ball: #00A86B; --title: #fff; /* Pokedex Navy, Fondo Bordó */
 }
 .theme-4 { 
-    --pk-color: #B9F2FF; --bg-main: #000000; 
-    --ball-color: #A78BFA; --title-color: #333;
+    --pk: #B9F2FF; --bg: #000000; --ball: #7038F8; --title: #222; /* Pokedex Celeste, Fondo Negro */
 }
-/* Gen 5: Ajustado patrón a un GRIS FUERTE sobre el BLANCO */
 .theme-5 { 
-    --pk-color: #111111; --bg-main: #FFFFFF; 
-    --ball-color: #444444; --title-color: white;
+    --pk: #222222; --bg: #FFFFFF; --ball: #888888; --title: #fff;
 }
-/* Todas: Ajustado patrón a un PÚRPURA MUY OSCURO sobre el BEIGE */
 .theme-all { 
-    --pk-color: #A78BFA; --bg-main: #F5F5DC; 
-    --ball-color: #301934; --title-color: white;
-}
-
-:root {
-    --screen-text: #2c3e50;
-    --gb-maroon: #8b1d44; /* Color clásico botón A de Game Boy */
-    --pk-pattern-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='currentColor' d='M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 90a40 40 0 1 1 0-80 40 40 0 0 1 0 80zM20 48h22c0-4.4 3.6-8 8-8s8 3.6 8 8h22a2 2 0 0 1 2 2 2 2 0 0 1-2 2H78c0 4.4-3.6 8-8 8s-8-3.6-8-8H20a2 2 0 0 1-2-2 2 2 0 0 1 2-2z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='currentColor'/%3E%3C/svg%3E");
+    --pk: #A78BFA; --bg: #F5F5DC; --ball: #301934; --title: #fff; /* Pokedex Morada, Fondo Beige */
 }
 
 body {
-    background-color: var(--bg-main);
     margin: 0;
-    overflow: hidden;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: 'Press Start 2P', cursive;
-    transition: background-color 0.5s ease;
+    background-color: var(--bg);
+    /* PATRÓN DIAGONAL DE POKÉBOLAS */
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 70px),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.4'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='white' stroke-width='10'/%3E%3Cline x1='5' y1='50' x2='40' y2='50' stroke='white' stroke-width='10'/%3E%3Cline x1='60' y1='50' x2='95' y2='50' stroke='white' stroke-width='10'/%3E%3Ccircle cx='50' cy='50' r='12' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+    background-blend-mode: overlay;
+    color: var(--ball); /* El SVG hereda este color por contraste */
+    transition: background-color 0.4s;
 }
 
-/* PATRÓN DIAGONAL FORZADO */
-body::before {
-    content: "";
-    position: fixed;
-    top: -50%; left: -50%; width: 200%; height: 200%;
-    background-image: var(--pk-pattern-svg);
-    background-size: 80px 80px;
-    background-repeat: repeat;
-    color: var(--ball-color); /* Aquí se inyecta el color del patrón */
-    transform: rotate(-25deg); /* Inclinación diagonal */
-    opacity: 0.2;
-    z-index: -1;
-    transition: color 0.5s ease;
-}
-
-.pokedex {
-    background-color: var(--pk-color);
-    width: 440px; 
+.pokedex-case {
+    background-color: var(--pk);
+    width: 440px;
     padding: 25px;
-    border-radius: 10px 10px 10px 60px;
-    border: 8px solid #222;
-    box-shadow: 15px 15px 0px rgba(0,0,0,0.3);
-    transition: background-color 0.5s ease;
+    border: 8px solid #333;
+    border-radius: 15px 15px 15px 70px;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.4);
+    transition: background-color 0.4s;
     z-index: 10;
 }
 
-.title { 
-    font-size: 16px; 
-    color: var(--title-color); 
-    text-align: center; 
-    margin: 10px 0;
-    text-transform: uppercase;
+.main-title {
+    font-size: 16px;
+    text-align: center;
+    color: var(--title);
+    margin: 15px 0;
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
 }
 
-/* --- BOTÓN "A" GAME BOY --- */
-#audio-section {
+/* BOTÓN DE AUDIO ESTÉTICO */
+.audio-control {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,69 +64,92 @@ body::before {
 }
 
 #play-btn {
-    width: 65px;
-    height: 65px;
-    background-color: var(--gb-maroon);
-    border: 4px solid #4a0f25;
-    border-radius: 50%;
-    color: rgba(255,255,255,0.4);
+    background-color: #333;
+    color: #eee;
+    border: 4px solid #000;
+    padding: 15px 30px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
+    font-size: 10px;
     cursor: pointer;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.4);
-    transition: all 0.1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 4px 4px 0px #111;
+    border-radius: 5px;
 }
 
 #play-btn:active {
-    box-shadow: 1px 1px 0px rgba(0,0,0,0.4);
-    transform: translate(3px, 3px);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #111;
 }
 
-.btn-label {
+/* PANTALLA */
+.pokedex-screen {
+    background-color: #dedede;
+    padding: 15px 15px 35px 15px;
+    border-radius: 10px;
+    border: 5px solid #555;
+    margin-bottom: 15px;
+}
+
+#main-screen, #gritodex-screen, #screen-content {
+    background-color: #98b088; /* Verde GameBoy default */
+    border: 5px inset rgba(0,0,0,0.2);
+    min-height: 380px;
+    padding: 12px;
+}
+
+/* OPCIONES */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.3);
+    border: 2px solid transparent;
+    padding: 5px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
     font-size: 10px;
-    color: #4a0f25;
-    margin-top: 8px;
-    font-weight: bold;
+    width: 100%;
 }
 
-/* Estilos de Juego */
-.screen-container { background-color: #dedede; padding: 15px 15px 35px 15px; border-radius: 12px; border: 6px solid #444; margin-bottom: 15px; }
-#main-screen, #gritodex-screen { background-color: var(--screen-bg); border: 5px inset rgba(0,0,0,0.2); min-height: 380px; padding: 12px; }
+.option-btn:hover { background: rgba(255,255,255,0.5); }
 
-.option-btn { 
-    display: flex; align-items: center; background: rgba(255,255,255,0.2); 
-    border: 2px solid transparent; cursor: pointer; font-family: 'Press Start 2P', cursive; 
-    font-size: 11px; padding: 5px; border-radius: 5px; width: 100%; margin-bottom: 5px;
-}
+.pkmn-icon { width: 50px; height: 50px; margin-right: 15px; image-rendering: pixelated; }
 
-.option-btn:hover:not(:disabled) { border-color: #333; background: rgba(255,255,255,0.4); }
+/* FEEDBACK */
+#feedback { text-align: center; color: white; margin-bottom: 15px; }
+#next-btn { background: #eee; border: 3px solid #333; padding: 10px; font-family: 'Press Start 2P', cursive; cursor: pointer; width: 100%; }
 
-.pkmn-icon { width: 52px; height: 52px; margin-right: 15px; image-rendering: pixelated; }
+/* LUCES */
+.top-header { display: flex; gap: 15px; margin-bottom: 15px; }
+.big-light { width: 50px; height: 50px; background: #5dade2; border: 4px solid #fff; border-radius: 50%; }
+.loading-light { animation: pulse 0.6s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+.trio-lights { display: flex; gap: 8px; padding-top: 10px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #222; }
+.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
 
-.option-btn.correct { background-color: #2ecc71 !important; color: white; }
-.option-btn.incorrect { background-color: #e74c3c !important; color: white; }
+/* NAV */
+.tabs { display: flex; gap: 5px; margin-bottom: 15px; }
+.tabs button { flex: 1; background: #222; color: #fff; border: 2px solid #fff; padding: 10px; font-family: 'Press Start 2P', cursive; font-size: 8px; cursor: pointer; }
+.tabs button.active { background: #555; color: #f1c40f; }
 
-#feedback { color: white; font-size: 10px; text-align: center; margin-top: 10px; min-height: 40px; }
-#next-btn { background: #eee; border: 4px solid #333; padding: 10px; font-family: 'Press Start 2P', cursive; font-size: 12px; cursor: pointer; width: 100%; }
-
-/* Decoración Inferior GB */
-.pokedex-decoration { display: flex; justify-content: space-between; align-items: center; padding: 0 10px; margin-top: 10px; }
-.d-pad { width: 60px; height: 60px; background: #222; clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%); }
-.gameboy-controls { display: flex; gap: 15px; transform: rotate(-20deg); }
-.pill-btn { width: 35px; height: 8px; background: #555; border-radius: 10px; border: 2px solid #222; }
-
-/* Navegación */
-.nav-menu { display: flex; gap: 5px; margin-bottom: 10px; }
-.nav-menu button { flex: 1; background: #222; color: white; border: 2px solid #fff; font-family: 'Press Start 2P', cursive; font-size: 9px; padding: 8px; cursor: pointer; }
-.nav-menu button.active { background: #555; border-color: #f1c40f; }
+/* SELECT */
+.gen-filter { margin-bottom: 15px; }
+#gen-select { width: 100%; background: #333; color: white; padding: 12px; font-family: 'Press Start 2P', cursive; font-size: 10px; border: 4px solid #000; }
 
 .hidden { display: none; }
-.top-lights { display: flex; gap: 10px; margin-bottom: 10px; }
-.big-blue-light { width: 45px; height: 45px; background: #5dade2; border: 4px solid white; border-radius: 50%; }
-.loading-light { animation: blink 0.5s infinite; }
-@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
-.light { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #333; }
-.red { background: #ff0000; } .yellow { background: #f1c40f; } .green { background: #2ecc71; }
+
+/* GRITODEX */
+#gritodex-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-height: 320px; overflow-y: auto; }
+.gritodex-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.3); padding: 5px; }
+.gritodex-item img { width: 80px; height: 80px; image-rendering: pixelated; }
+
+/* DECO */
+.bottom-deco { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+.d-pad { width: 50px; height: 50px; background: #222; clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%); }
+.vent-lines { display: flex; flex-direction: column; gap: 5px; }
+.vent-lines span { width: 40px; height: 4px; background: #222; border-radius: 2px; }
