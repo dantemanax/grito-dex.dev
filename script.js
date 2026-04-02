@@ -17,6 +17,7 @@ const nextBtn = document.getElementById('next-btn');
 const statusLight = document.getElementById('status-light');
 const gritodexList = document.getElementById('gritodex-list');
 const countLabel = document.getElementById('count');
+
 const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
 const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
 
@@ -25,9 +26,7 @@ let hasGuessed = false;
 let cryAudio = null;
 
 function applyTheme(value) {
-    console.log("Aplicando tema de Generación:", value);
-    appBody.className = '';
-    appBody.classList.add(`theme-${value}`);
+    appBody.className = `theme-${value}`;
 }
 
 function saveToGritodex(pkmn) {
@@ -69,12 +68,11 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p>BUSCANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
     
-    const genValue = genSelect.value;
-    applyTheme(genValue);
+    applyTheme(genSelect.value);
 
-    const { min, max } = GEN_RANGES[genValue];
+    const { min, max } = GEN_RANGES[genSelect.value];
     const ids = [];
     while(ids.length < 5) {
         const id = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -102,7 +100,6 @@ async function startNewRound() {
         renderOptions(pokemons);
         statusLight.classList.remove('loading-light');
     } catch (e) {
-        console.error("Error de carga:", e);
         optionsContainer.innerHTML = 'ERROR DE RED';
         statusLight.classList.remove('loading-light');
     }
@@ -124,7 +121,7 @@ function handleGuess(id, btn) {
 
     if (id === currentTarget.id) {
         btn.classList.add('correct');
-        message.innerText = `¡SI! ES ${currentTarget.spanishName || currentTarget.name}`;
+        message.innerText = `¡CORRECTO!`;
         document.getElementById('snd-success').play().catch(()=>{});
         saveToGritodex(currentTarget);
     } else {
