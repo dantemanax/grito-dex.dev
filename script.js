@@ -17,7 +17,6 @@ const nextBtn = document.getElementById('next-btn');
 const statusLight = document.getElementById('status-light');
 const gritodexList = document.getElementById('gritodex-list');
 const countLabel = document.getElementById('count');
-
 const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
 const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
 
@@ -25,8 +24,12 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
-function applyTheme(value) {
-    appBody.className = `theme-${value}`;
+// MOTOR DE TEMAS: Forzamos la clase al body para actualizar colores y patrones
+function updateTheme() {
+    const val = genSelect.value;
+    console.log("Cambiando a tema:", val);
+    appBody.className = ""; // Limpia clases previas
+    appBody.classList.add(`theme-${val}`);
 }
 
 function saveToGritodex(pkmn) {
@@ -44,11 +47,12 @@ function renderGritodex() {
     gritodexList.innerHTML = dex.map(p => `
         <div class="gritodex-item">
             <img src="${p.sprite}" alt="${p.name}">
-            <span>#${p.id}<br>${p.name}</span>
+            <span style="font-size:7px; text-align:center">#${p.id}<br>${p.name}</span>
         </div>
     `).join('');
 }
 
+// NAVEGACIÓN
 navBtns.game.onclick = () => {
     views.game.classList.remove('hidden');
     views.dex.classList.add('hidden');
@@ -68,9 +72,9 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:8px">CONECTANDO...</p>';
     
-    applyTheme(genSelect.value);
+    updateTheme(); // Aplicar colores de la generación elegida
 
     const { min, max } = GEN_RANGES[genSelect.value];
     const ids = [];
@@ -100,7 +104,7 @@ async function startNewRound() {
         renderOptions(pokemons);
         statusLight.classList.remove('loading-light');
     } catch (e) {
-        optionsContainer.innerHTML = 'ERROR DE RED';
+        optionsContainer.innerHTML = 'ERROR API';
         statusLight.classList.remove('loading-light');
     }
 }
@@ -120,17 +124,16 @@ function handleGuess(id, btn) {
     document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
 
     if (id === currentTarget.id) {
-        btn.classList.add('correct');
-        message.innerText = `¡CORRECTO!`;
+        btn.style.backgroundColor = "#2ecc71";
+        btn.style.color = "white";
+        message.innerText = `¡ACIERTO!`;
         document.getElementById('snd-success').play().catch(()=>{});
         saveToGritodex(currentTarget);
     } else {
-        btn.classList.add('incorrect');
+        btn.style.backgroundColor = "#e74c3c";
+        btn.style.color = "white";
         message.innerText = `ERA ${currentTarget.spanishName || currentTarget.name}`;
         document.getElementById('snd-error').play().catch(()=>{});
-        document.querySelectorAll('.option-btn').forEach(b => {
-            if(b.innerHTML.includes(currentTarget.sprite)) b.classList.add('correct');
-        });
     }
     feedback.classList.remove('hidden');
 }
