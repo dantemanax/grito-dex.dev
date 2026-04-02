@@ -7,6 +7,7 @@ const GEN_RANGES = {
     "all": { min: 1, max: 649 }
 };
 
+const appBody = document.getElementById('app-body');
 const views = { game: document.getElementById('game-view'), dex: document.getElementById('gritodex-view') };
 const navBtns = { game: document.getElementById('btn-game'), dex: document.getElementById('btn-view-gritodex') };
 const optionsContainer = document.getElementById('options-container');
@@ -25,15 +26,19 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
+// --- MOTOR DE TEMAS ---
+function applyTheme(value) {
+    // Limpia clases anteriores de tema
+    appBody.className = '';
+    // Aplica la nueva clase: theme-1, theme-2... theme-all
+    appBody.classList.add(`theme-${value}`);
+}
+
 // --- PERSISTENCIA ---
 function saveToGritodex(pkmn) {
     let dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
     if (!dex.find(item => item.id === pkmn.id)) {
-        dex.push({ 
-            id: pkmn.id, 
-            name: pkmn.spanishName || pkmn.name, 
-            sprite: pkmn.sprite 
-        });
+        dex.push({ id: pkmn.id, name: pkmn.spanishName || pkmn.name, sprite: pkmn.sprite });
         dex.sort((a, b) => a.id - b.id);
         localStorage.setItem('gritodex', JSON.stringify(dex));
     }
@@ -71,9 +76,12 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:10px">BUSCANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
     
-    const { min, max } = GEN_RANGES[genSelect.value];
+    const genValue = genSelect.value;
+    applyTheme(genValue); // Cambia el tema visual al iniciar ronda
+
+    const { min, max } = GEN_RANGES[genValue];
     const ids = [];
     while(ids.length < 5) {
         const id = Math.floor(Math.random() * (max - min + 1)) + min;
