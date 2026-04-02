@@ -24,7 +24,7 @@ let currentTarget = null;
 let hasGuessed = false;
 let cryAudio = null;
 
-// MOTOR DE TEMAS: Forzamos la clase al body para actualizar colores y patrones
+// MOTOR DE TEMAS: Forzamos la clase al body
 function updateTheme() {
     const val = genSelect.value;
     console.log("Cambiando a tema:", val);
@@ -34,8 +34,14 @@ function updateTheme() {
 
 function saveToGritodex(pkmn) {
     let dex = JSON.parse(localStorage.getItem('gritodex') || '[]');
+    // Buscamos si ya existe por ID
     if (!dex.find(item => item.id === pkmn.id)) {
-        dex.push({ id: pkmn.id, name: pkmn.spanishName || pkmn.name, sprite: pkmn.sprite });
+        // Guardamos los datos necesarios para la visualización en la DEX
+        dex.push({ 
+            id: pkmn.id, 
+            name: pkmn.spanishName || pkmn.name, 
+            sprite: pkmn.sprite 
+        });
         dex.sort((a, b) => a.id - b.id);
         localStorage.setItem('gritodex', JSON.stringify(dex));
     }
@@ -47,7 +53,7 @@ function renderGritodex() {
     gritodexList.innerHTML = dex.map(p => `
         <div class="gritodex-item">
             <img src="${p.sprite}" alt="${p.name}">
-            <span style="font-size:7px; text-align:center">#${p.id}<br>${p.name}</span>
+            <span>#${p.id}<br>${p.name}</span>
         </div>
     `).join('');
 }
@@ -72,7 +78,7 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p style="font-size:8px">CONECTANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:10px">CONECTANDO...</p>';
     
     updateTheme(); // Aplicar colores de la generación elegida
 
@@ -124,16 +130,17 @@ function handleGuess(id, btn) {
     document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
 
     if (id === currentTarget.id) {
-        btn.style.backgroundColor = "#2ecc71";
-        btn.style.color = "white";
-        message.innerText = `¡ACIERTO!`;
+        btn.classList.add('correct');
+        message.innerText = `¡CORRECTO!`;
         document.getElementById('snd-success').play().catch(()=>{});
         saveToGritodex(currentTarget);
     } else {
-        btn.style.backgroundColor = "#e74c3c";
-        btn.style.color = "white";
+        btn.classList.add('incorrect');
         message.innerText = `ERA ${currentTarget.spanishName || currentTarget.name}`;
         document.getElementById('snd-error').play().catch(()=>{});
+        document.querySelectorAll('.option-btn').forEach(b => {
+            if(b.innerHTML.includes(currentTarget.sprite)) b.classList.add('correct');
+        });
     }
     feedback.classList.remove('hidden');
 }
