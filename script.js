@@ -42,7 +42,7 @@ function renderGritodex() {
     if(countLabel) countLabel.innerText = dex.length;
     gritodexList.innerHTML = dex.map(p => `
         <div class="gritodex-item">
-            <img src="${p.sprite}" alt="${p.name}">
+            <img src="${p.sprite}" alt="${p.name}" style="width:80px; height:80px; image-rendering:pixelated">
             <span>#${p.id}<br>${p.name}</span>
         </div>
     `).join('');
@@ -63,7 +63,7 @@ async function startNewRound() {
     hasGuessed = false;
     feedback.classList.add('hidden');
     statusLight.classList.add('loading-light');
-    optionsContainer.innerHTML = '<p>CARGANDO...</p>';
+    optionsContainer.innerHTML = '<p style="font-size:10px">CARGANDO...</p>';
     applyTheme(genSelect.value);
 
     const { min, max } = GEN_RANGES[genSelect.value];
